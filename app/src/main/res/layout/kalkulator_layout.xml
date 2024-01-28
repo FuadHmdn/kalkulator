@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tols="http://schemas.android.com/tools">
+
+    <Button
+        android:id="@+id/hasilButton"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:text="="
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:background="@color/purple_500"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/tambahButton"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:text="+"
+        android:textSize="40dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:background="@color/transparent"
+
+        app:layout_constraintBottom_toTopOf="@id/hasilButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/kurangButton"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:text="-"
+        android:textScaleX="2"
+        android:textSize="35dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/tambahButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/kaliButton"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:text="x"
+        android:textSize="35dp"
+        android:layout_marginEnd="10dp"
+        android:scaleY="0.9"
+        android:textColor="@color/purple_500"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/kurangButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/bagiButton"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:text="÷"
+        android:textSize="35dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/purple_500"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/kaliButton"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/komaButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text=","
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/hasilButton"/>
+
+    <Button
+        android:id="@+id/nolButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="0"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/gambarImageView"/>
+
+    <Button
+        android:id="@+id/duaButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="2"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/nolButton"
+        app:layout_constraintStart_toEndOf="@id/satuButton"/>
+
+    <Button
+        android:id="@+id/limaButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="5"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/duaButton"
+        app:layout_constraintStart_toEndOf="@id/empatButton"/>
+
+    <Button
+        android:id="@+id/delapanButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="8"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/limaButton"
+        app:layout_constraintStart_toEndOf="@id/tujuhButton"/>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@color/transparent"
+        android:text="⌫"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@id/delapanButton"
+        app:layout_constraintEnd_toStartOf="@+id/bagiButton"
+        app:layout_constraintStart_toStartOf="@+id/delapanButton" />
+
+
+    <Button
+        android:id="@+id/tigaButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="3"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/komaButton"
+        app:layout_constraintEnd_toStartOf="@id/tambahButton"/>
+
+    <Button
+        android:id="@+id/enamButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="6"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/tigaButton"
+        app:layout_constraintEnd_toStartOf="@id/kurangButton"/>
+
+    <Button
+        android:id="@+id/sembilanButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="9"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/enamButton"
+        app:layout_constraintEnd_toStartOf="@id/kaliButton"/>
+
+    <ImageView
+        android:id="@+id/gambarImageView"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="35dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/satuButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        android:textSize="35dp"
+        android:text="1"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toTopOf="@id/gambarImageView"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/empatButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        android:textSize="35dp"
+        android:text="4"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toTopOf="@id/satuButton"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/tujuhButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:textColor="@color/black"
+        android:background="@color/transparent"
+        android:textSize="35dp"
+        android:text="7"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toTopOf="@id/empatButton"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/acButton"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/transparent"
+        android:text="AC"
+        android:textColor="@color/purple_500"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@id/tujuhButton"
+        app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/hasilTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tols:text="=30"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bagiButton"/>
+
+    <TextView
+        android:id="@+id/hitungTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tols:text="15X2"
+        android:textSize="40dp"
+        android:textAlignment="viewEnd"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/hasilTextView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
