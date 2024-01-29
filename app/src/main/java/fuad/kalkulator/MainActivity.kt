@@ -79,6 +79,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTextSize(30F)
             hitungTextView.setTextSize(40F)
         }
+
         duaButton.setOnClickListener {
             hasilTextView.setTextColor(ContextCompat.getColor(this, R.color.normal))
             hitungTextView.setTextColor(ContextCompat.getColor(this, R.color.black))
@@ -88,6 +89,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
         }
+
         tigaButton.setOnClickListener {
             hitungTextView.append("3")
             hasilTextView.setTextColor(ContextCompat.getColor(this, R.color.normal))
@@ -195,7 +197,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
-            hitungTextView.append("*")
+            hitungTextView.append("x")
         }
 
         bagiButton.setOnClickListener {
@@ -203,7 +205,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextSize(40F)
             hasilTextView.setTextColor(ContextCompat.getColor(this, R.color.normal))
             hitungTextView.setTextColor(ContextCompat.getColor(this, R.color.black))
-            hitungTextView.append("/")
+            hitungTextView.append("÷")
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
         }
@@ -251,12 +253,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextColor(ContextCompat.getColor(this, R.color.normal))
             hasilTextView.setTextSize(40F)
             hitungTextView.setTextSize(30F)
-
-            if (hitungTextView.text == ""){
-                hitungTextView.text = ""
-            }else{
-                hitung()
-            }
+            hitung()
         }
     }
 
@@ -265,23 +262,34 @@ class MainActivity : ComponentActivity() {
 
         if (isi.isNotEmpty()) {
             if ("+-*/".contains(isi.last())) {
-                val expressionString = isi.substring(0, isi.length - 1)
+                val ubah = isi.replace('x', '*').replace('÷', '/')
+                val expressionString = ubah.substring(0, ubah.length - 1)
 
                 if (expressionString.isNotEmpty()) {
                     val expression = ExpressionBuilder(expressionString).build()
                     val hasil = expression.evaluate()
-                    hasilTextView.text = "= $hasil"
+                    if(hasil % 1 == 0.0){
+                        val result = hasil.toInt()
+                        hasilTextView.text = "= $result"
+                    }else{
+                        hasilTextView.text = "= $hasil"
+                    }
                 } else {
-                    hasilTextView.text = "0"
+                    hasilTextView.text = "= 0"
                 }
             } else {
-                val expression = ExpressionBuilder(isi).build()
+                val ubah = isi.replace('x', '*').replace('÷', '/')
+                val expression = ExpressionBuilder(ubah).build()
                 val hasil = expression.evaluate()
-                hasilTextView.text = "= $hasil"
+                if(hasil % 1 == 0.0){
+                    val result = hasil.toInt()
+                    hasilTextView.text = "= $result"
+                }else{
+                    hasilTextView.text = "= $hasil"
+                }
             }
         } else {
             hasilTextView.text = "= 0"
         }
     }
-
 }
