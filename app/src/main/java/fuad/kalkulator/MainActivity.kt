@@ -78,6 +78,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hasilTextView.setTextSize(30F)
             hitungTextView.setTextSize(40F)
+            hitung()
         }
 
         duaButton.setOnClickListener {
@@ -88,6 +89,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextSize(40F)
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
+            hitung()
         }
 
         tigaButton.setOnClickListener {
@@ -98,6 +100,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextSize(40F)
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
+            hitung()
         }
 
         empatButton.setOnClickListener {
@@ -108,6 +111,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
+            hitung()
         }
 
         limaButton.setOnClickListener {
@@ -118,6 +122,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
+            hitung()
         }
 
         enamButton.setOnClickListener {
@@ -128,6 +133,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.append("6")
+            hitung()
         }
 
         tujuhButton.setOnClickListener {
@@ -138,6 +144,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.append("7")
+            hitung()
         }
 
         delapanButton.setOnClickListener {
@@ -148,6 +155,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.append("8")
+            hitung()
         }
 
         sembilanButton.setOnClickListener {
@@ -158,6 +166,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
             hitungTextView.append("9")
+            hitung()
         }
 
         nolButton.setOnClickListener {
@@ -168,6 +177,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
             hitungTextView.append("0")
+            hitung()
         }
 
         tambahButton.setOnClickListener {
