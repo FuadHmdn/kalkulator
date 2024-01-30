@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tols="http://schemas.android.com/tools">
+    xmlns:tols="http://schemas.android.com/tools"
+    android:background="@color/white">
 
     <Button
         android:id="@+id/hasilButton"
@@ -28,7 +29,7 @@
         android:layout_marginEnd="10dp"
         android:textAlignment="center"
         android:textColor="@color/purple_500"
-        android:background="@color/transparent"
+        android:background="@color/button"
 
         app:layout_constraintBottom_toTopOf="@id/hasilButton"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -43,7 +44,7 @@
         android:layout_marginEnd="10dp"
         android:textAlignment="center"
         android:textColor="@color/purple_500"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/tambahButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -56,7 +57,7 @@
         android:layout_marginEnd="10dp"
         android:scaleY="0.9"
         android:textColor="@color/purple_500"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/kurangButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -68,7 +69,7 @@
         android:textSize="35dp"
         android:layout_marginEnd="10dp"
         android:textColor="@color/purple_500"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/kaliButton"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -80,7 +81,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/hasilButton"/>
@@ -93,7 +94,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:layout_marginBottom="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/gambarImageView"/>
@@ -106,7 +107,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/nolButton"
         app:layout_constraintStart_toEndOf="@id/satuButton"/>
 
@@ -118,7 +119,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/duaButton"
         app:layout_constraintStart_toEndOf="@id/empatButton"/>
 
@@ -130,7 +131,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/limaButton"
         app:layout_constraintStart_toEndOf="@id/tujuhButton"/>
 
@@ -138,7 +139,7 @@
         android:id="@+id/deleteButton"
         android:layout_width="100dp"
         android:layout_height="80dp"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:text="⌫"
         android:textAlignment="center"
         android:textColor="@color/purple_500"
@@ -156,7 +157,7 @@
         android:textSize="40dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/komaButton"
         app:layout_constraintEnd_toStartOf="@id/tambahButton"/>
 
@@ -168,7 +169,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/tigaButton"
         app:layout_constraintEnd_toStartOf="@id/kurangButton"/>
 
@@ -180,7 +181,7 @@
         android:textSize="35dp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         app:layout_constraintBottom_toTopOf="@id/enamButton"
         app:layout_constraintEnd_toStartOf="@id/kaliButton"/>
 
@@ -201,7 +202,7 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:textSize="35dp"
         android:text="1"
         android:layout_marginStart="10dp"
@@ -213,7 +214,7 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:textSize="35dp"
         android:text="4"
         android:layout_marginStart="10dp"
@@ -225,7 +226,7 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:textColor="@color/black"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:textSize="35dp"
         android:text="7"
         android:layout_marginStart="10dp"
@@ -237,7 +238,7 @@
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_marginStart="10dp"
-        android:background="@color/transparent"
+        android:background="@color/button"
         android:text="AC"
         android:textColor="@color/purple_500"
         android:textSize="35dp"

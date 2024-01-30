@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.lang.Character.isDigit
@@ -78,6 +79,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hasilTextView.setTextSize(30F)
             hitungTextView.setTextSize(40F)
+
             hitung()
         }
 
@@ -165,6 +167,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
+
             hitungTextView.append("9")
             hitung()
         }
@@ -176,6 +179,7 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
+
             hitungTextView.append("0")
             hitung()
         }
@@ -187,7 +191,16 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextSize(40F)
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
-            hitungTextView.append("+")
+
+            val hitungHitung = hitungTextView.text.toString()
+            if(hitungHitung.isNotEmpty() && "+-x÷".contains(hitungHitung.last())){
+                val teksBaru = hitungTextView.text.dropLast(1)
+                hitungTextView.text = teksBaru.toString()
+                hitungTextView.append("+")
+            }
+            else{
+                hitungTextView.append("+")
+            }
         }
 
         kurangButton.setOnClickListener {
@@ -197,7 +210,16 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextColor(ContextCompat.getColor(this, R.color.black))
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
-            hitungTextView.append("-")
+
+            val hitungHitung = hitungTextView.text.toString()
+            if(hitungHitung.isNotEmpty() && "+-x÷".contains(hitungHitung.last())) {
+                val teksBaru = hitungTextView.text.dropLast(1)
+                hitungTextView.text = teksBaru.toString()
+                hitungTextView.append("-")
+            }
+            else {
+                hitungTextView.append("-")
+            }
         }
 
         kaliButton.setOnClickListener {
@@ -207,7 +229,19 @@ class MainActivity : ComponentActivity() {
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hitungTextView.setTextSize(40F)
-            hitungTextView.append("x")
+
+            val hitungHitung = hitungTextView.text.toString()
+            if(hitungHitung.isNotEmpty() && "+-x÷".contains(hitungHitung.last())) {
+                val teksBaru = hitungTextView.text.dropLast(1)
+                hitungTextView.text = teksBaru.toString()
+                hitungTextView.append("x")
+            }
+            else if(hitungHitung.isEmpty()){
+                hitungTextView.text = "0x"
+            }
+            else {
+                hitungTextView.append("x")
+            }
         }
 
         bagiButton.setOnClickListener {
@@ -215,9 +249,21 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextSize(40F)
             hasilTextView.setTextColor(ContextCompat.getColor(this, R.color.normal))
             hitungTextView.setTextColor(ContextCompat.getColor(this, R.color.black))
-            hitungTextView.append("÷")
             hasilTextView.setTypeface(null, Typeface.NORMAL)
             hitungTextView.setTypeface(null, Typeface.BOLD)
+
+            val hitungHitung = hitungTextView.text.toString()
+            if(hitungHitung.isNotEmpty() && "+-x÷".contains(hitungHitung.last())) {
+                val teksBaru = hitungTextView.text.dropLast(1)
+                hitungTextView.text = teksBaru.toString()
+                hitungTextView.append("÷")
+            }
+            else if(hitungHitung.isEmpty()){
+                hitungTextView.text = "0÷"
+            }
+            else {
+                hitungTextView.append("÷")
+            }
         }
 
         acButton.setOnClickListener {
@@ -254,6 +300,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTypeface(null, Typeface.BOLD)
             hasilTextView.setTextSize(30F)
             hitungTextView.setTextSize(40F)
+            hitung()
         }
 
         hasilButton.setOnClickListener {
@@ -263,6 +310,7 @@ class MainActivity : ComponentActivity() {
             hitungTextView.setTextColor(ContextCompat.getColor(this, R.color.normal))
             hasilTextView.setTextSize(40F)
             hitungTextView.setTextSize(30F)
+
             hitung()
         }
     }
@@ -270,8 +318,15 @@ class MainActivity : ComponentActivity() {
     fun hitung() {
         val isi = hitungTextView.text?.toString()?.trim() ?: ""
 
-        if (isi.isNotEmpty()) {
-            if ("+-*/".contains(isi.last())) {
+        if ("= Tidak bisa dibagi dengan nol" == hasilTextView.text.toString()){
+            hasilTextView.text ="= 0"
+        }
+        else if (isi.length != 1 && isi.isNotEmpty() && '÷' == isi[isi.length - 2] &&  isi.last() == '0'){
+            hasilTextView.text ="= Tidak bisa dibagi dengan nol"
+            hitungTextView.text = ""
+        }
+        else if (isi.isNotEmpty() && isi.length != 1) {
+            if ("+-x÷".contains(isi.last())) {
                 val ubah = isi.replace('x', '*').replace('÷', '/')
                 val expressionString = ubah.substring(0, ubah.length - 1)
 
@@ -298,8 +353,22 @@ class MainActivity : ComponentActivity() {
                     hasilTextView.text = "= $hasil"
                 }
             }
-        } else {
+        }
+        else if (isi.length != 1 && isi.isNotEmpty() && '÷' == isi[isi.length - 2] &&  isi.last() == '0'){
+            hasilTextView.text ="= Tidak bisa dibagi dengan nol"
+        }
+        else if (isi.length != 1 && isi.isNotEmpty() && '÷' == isi[isi.length - 2] &&  isi.last() == '0'){
+            hasilTextView.text ="= Tidak bisa dibagi dengan nol"
+        }
+        else if(isi.length == 1 && "+-x÷".contains(isi)){
+            hasilTextView.text = "= 0"
+        }
+        else if ("= Tidak bisa dibagi dengan nol" == hasilTextView.text.toString()){
+            hasilTextView.text ="= Tidak bisa dibagi dengan nol"
+        }
+        else {
             hasilTextView.text = "= 0"
         }
     }
 }
+//Test
